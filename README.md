@@ -14,11 +14,24 @@
 
 ## 安装
 
+**方式一：从仓库**（需要机器上有 `git`）
+
 ```sh
 dsh plugin --profile <你的profile> add github:a1109283205-glitch/dsh-magic-indicator
 ```
 
+**方式二：从 Release 下载**（**不需要 git**）
+
+```sh
+dsh plugin --profile <你的profile> add https://github.com/a1109283205-glitch/dsh-magic-indicator/releases/download/v0.1.0/dsh-magic-indicator-0.1.0.tgz
+```
+
 然后**重启 DSH**，刷新页面。
+
+> **前置要求**
+> - 方式一需要 `git`，缺了会报 `'git' 不是内部或外部命令`。装：`winget install Git.Git` / `brew install git` / `apt install git`
+> - 若只能通过代理访问 GitHub：**npm/pnpm 和 git 一样不读系统代理**，需要单独配 ——
+>   `npm config set https-proxy http://127.0.0.1:<端口>`
 
 ## 使用
 
