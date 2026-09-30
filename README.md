@@ -14,35 +14,24 @@
 
 ## 安装
 
-**把下面这个链接粘到 DSH 的对话框里，跟它说「帮我装这个插件」：**
-
-```
-https://github.com/a1109283205-glitch/dsh-magic-indicator/releases/download/v0.1.0/dsh-magic-indicator-0.1.0.tgz
-```
-
-装完**重启一次 DSH**，输入框工具行就会出现那个灰色小框。
-
-<details>
-<summary>或者自己敲命令（点开）</summary>
+**方式一：从仓库**（需要机器上有 `git`）
 
 ```sh
-# desktop 换成你自己的 profile 名
-dsh plugin --profile desktop add https://github.com/a1109283205-glitch/dsh-magic-indicator/releases/download/v0.1.0/dsh-magic-indicator-0.1.0.tgz
+dsh plugin --profile <你的profile> add github:a1109283205-glitch/dsh-magic-indicator
 ```
 
-不确定 profile 名？看 `C:\Users\<你的用户名>\.dsh\profiles\` 下有哪些文件夹，一般是 `desktop`。
-
-从仓库装也行，但**需要机器上有 `git`**（缺了会报 `'git' 不是内部或外部命令`，
-装它：`winget install Git.Git` / `brew install git` / `apt install git`）：
+**方式二：从 Release 下载**（**不需要 git**）
 
 ```sh
-dsh plugin --profile desktop add github:a1109283205-glitch/dsh-magic-indicator
+dsh plugin --profile <你的profile> add https://github.com/a1109283205-glitch/dsh-magic-indicator/releases/download/v0.1.0/dsh-magic-indicator-0.1.0.tgz
 ```
 
-若只能通过代理访问 GitHub：**npm/pnpm 和 git 一样不读系统代理**，需要单独配 ——
-`npm config set https-proxy http://127.0.0.1:<端口>`
+然后**重启 DSH**，刷新页面。
 
-</details>
+> **前置要求**
+> - 方式一需要 `git`，缺了会报 `'git' 不是内部或外部命令`。装：`winget install Git.Git` / `brew install git` / `apt install git`
+> - 若只能通过代理访问 GitHub：**npm/pnpm 和 git 一样不读系统代理**，需要单独配 ——
+>   `npm config set https-proxy http://127.0.0.1:<端口>`
 
 ## 使用
 
