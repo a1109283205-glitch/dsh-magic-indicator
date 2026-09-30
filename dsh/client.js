@@ -1,14 +1,15 @@
 // Browser half of dsh-magic-indicator.
 //
-// A passive chip in `conversation.input.left` — the composer tool row, beside
-// the 识图 button that dsh-qwen-switch registers there (that one is order 10,
-// this one is order 20, so the chip sits immediately to its right).
+// A passive chip appended to `conversation.input.left` — the composer tool row.
+// It registers with `order: 20`, so it lands after the entries other plugins
+// place there (which commonly use lower orders), and it never replaces one:
+// a fresh `id` occupies its own cell in the row.
 //
-// The chip is a <span>, not a <button>: the user asked for something they
-// never click and cannot click, so it carries no handler, no focus seat, and
-// `pointer-events: none`. Its footprint is deliberately identical to the
-// neighbouring button (same height, padding, border width, radius and font
-// size) so the row keeps a single visual rhythm in both states.
+// The chip is a <span>, not a <button>: it is meant to be read, never clicked,
+// so it carries no handler, no focus seat, and `pointer-events: none`. Its
+// footprint is deliberately identical to the row's other controls (same height,
+// padding, border width, radius and font size) so the row keeps a single visual
+// rhythm in both states.
 //
 // Two states, driven by polling the host half:
 //
@@ -21,8 +22,7 @@
 // known state instead of flickering to idle.
 //
 // Hand-written in the lazy-CJS bundle protocol (window.__ModuleLoader__.load
-// with a factory returning cordis-plugin exports), so there is no build step —
-// the same shape dsh-qwen-switch uses.
+// with a factory returning cordis-plugin exports), so there is no build step.
 
 window.__ModuleLoader__.load({
   id: 'dsh-magic-indicator',
@@ -34,7 +34,7 @@ window.__ModuleLoader__.load({
     var STATUS_URL = '/dsh-magic/status'
     var POLL_MS = 1500
 
-    // Matches the neighbouring 识图 button so both chips read as one row.
+    // Matches the row's other controls so the chip reads as one of them.
     var CHIP_BASE = {
       display: 'inline-flex',
       alignItems: 'center',
