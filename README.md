@@ -16,11 +16,11 @@
 
 **第 1 步：下载**
 
-用浏览器打开下面这个链接，会下载一个小文件（7.6 KB）：
+点这个链接就会开始下载（7.6 KB）：
 
-```
-https://github.com/a1109283205-glitch/dsh-magic-indicator/releases/download/v0.1.0/dsh-magic-indicator-0.1.0.tgz
-```
+**[⬇ 下载 dsh-magic-indicator-0.1.0.tgz](https://github.com/a1109283205-glitch/dsh-magic-indicator/releases/download/v0.1.0/dsh-magic-indicator-0.1.0.tgz)**
+
+如果没反应，就去 **[Release 页面](https://github.com/a1109283205-glitch/dsh-magic-indicator/releases/tag/v0.1.0)** 在下面的 Assets 里点那个 `.tgz`。
 
 **第 2 步：让 DSH 装它**
 
