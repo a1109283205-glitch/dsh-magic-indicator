@@ -1,0 +1,36 @@
+{
+  "name": "dsh-magic-indicator",
+  "version": "0.1.0",
+  "description": "Passive composer indicator that lights up yellow with 需要魔法支援 while the agent is blocked on a region-restricted resource and needs the proxy switched on.",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "proxy",
+    "indicator",
+    "composer"
+  ],
+  "type": "module",
+  "main": "dsh/index.js",
+  "exports": {
+    ".": "./dsh/index.js",
+    "./client": "./dsh/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dsh",
+    "cordis.patch.yml"
+  ],
+  "license": "MIT",
+  "author": "a1109283205-glitch",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": []
+    }
+  }
+}

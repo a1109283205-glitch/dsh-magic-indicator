@@ -1,0 +1,7 @@
+# dsh-magic-indicator bundle patch: mount the host half, which serves
+# GET /dsh-magic/status (reads $DSH_HOME/magic-support.json on every request).
+# The visible chip itself is the client half, declared in package.json under
+# "dsh.client" so the web composition picks it up without a loader row.
+- insert:
+    - id: magic-indicator
+      name: dsh-magic-indicator
